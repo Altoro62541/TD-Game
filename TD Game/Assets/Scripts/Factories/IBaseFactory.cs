@@ -1,6 +1,4 @@
-using TDGame.Factories;
-using UnityEngine;
-namespace TDGame.Fabrics
+namespace TDGame.Factories
 {
     public interface IBaseFactory : IMonoBehaviorFactory<Base, IBase>
     {
