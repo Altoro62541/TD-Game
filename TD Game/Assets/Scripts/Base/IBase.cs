@@ -1,6 +1,10 @@
 using TDGame.Factories;
 
-public interface IBase : IFactoryObject
+namespace TDGame.BaseSpace
 {
+    public interface IBase : IFactoryObject
+    {
     
+    }
 }
+

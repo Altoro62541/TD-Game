@@ -1,6 +1,6 @@
 using UnityEngine;
 using Zenject;
-
+using TDGame.BaseSpace;
 namespace TDGame.Factories
 {
     public class BaseFactory : IBaseFactory

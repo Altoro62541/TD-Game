@@ -1,6 +1,7 @@
+using TDGame.EnemySpawnerSpace;
 namespace TDGame.Factories
 {
-    public interface IEnemySpawnerFactory : IMonoBehaviorFactory<Base, IBase>
+    public interface IEnemySpawnerFactory : IMonoBehaviorFactory<EnemySpawner, IEnemySpawner>
     {
 
     }

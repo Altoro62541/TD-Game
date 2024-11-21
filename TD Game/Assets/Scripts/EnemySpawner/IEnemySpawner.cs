@@ -1,6 +1,6 @@
 using TDGame.Factories;
 
-namespace TDGame
+namespace TDGame.EnemySpawnerSpace
 {
     public interface IEnemySpawner : IFactoryObject
     {

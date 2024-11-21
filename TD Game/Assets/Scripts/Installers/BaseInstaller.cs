@@ -1,6 +1,6 @@
 using Zenject;
 using UnityEngine;
-
+using TDGame.BaseSpace;
 namespace TDGame.Installers
 {
     public class BaseInstaller : MonoInstaller
@@ -10,12 +10,12 @@ namespace TDGame.Installers
 
         public override void InstallBindings()
         {
-            Container.Bind<IEnemySpawner>()
+            Container.Bind<IBase>()
                 .FromComponentInNewPrefab(_base)
                 .AsSingle()
                 .OnInstantiated((context, spawnerInstance) =>
                 {
-                    var fort = spawnerInstance as EnemySpawner;
+                    var fort = spawnerInstance as Base;
                     fort?.transform.SetParent(_movePoint.transform);
                 })
                 .NonLazy();
