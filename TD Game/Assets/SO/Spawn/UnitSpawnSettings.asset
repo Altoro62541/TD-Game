@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b346b2ce2d27a2940be5675b001af361, type: 3}
+  m_Name: UnitSpawnSettings
+  m_EditorClassIdentifier: 
+  _elements:
+  - _prefab: {fileID: 3639464494139432342, guid: ec114b2ecd2a7c94da7b51d9226d5316, type: 3}
+    _unitsCount: 4
+  - _prefab: {fileID: 3489053316762856075, guid: 0760bdd5cefe77d4fa91580b50da3442, type: 3}
+    _unitsCount: 3
+  - _prefab: {fileID: 4064128279132287537, guid: 812ee0ce111d04f4da2a7185c1ab525b, type: 3}
+    _unitsCount: 2
+  - _prefab: {fileID: 1638811045865080952, guid: 97c45d3701a0b1942be2a877f3d927a9, type: 3}
+    _unitsCount: 1
+  TotalWaves: 5
+  BaseUnitsPerWave: 10
+  WaveInterval: 5
+  SpawnInterval: 2

@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: _data
       value: 
       objectReference: {fileID: 11400000, guid: 38e36fdee5866a04b9cf5d158d90e355, type: 2}
+    - target: {fileID: 3489053316762856075, guid: 0760bdd5cefe77d4fa91580b50da3442, type: 3}
+      propertyPath: _scriptableData
+      value: 
+      objectReference: {fileID: 11400000, guid: 38e36fdee5866a04b9cf5d158d90e355, type: 2}
     - target: {fileID: 8632209378115909347, guid: 0760bdd5cefe77d4fa91580b50da3442, type: 3}
       propertyPath: m_Name
       value: UnitKnight Variant
