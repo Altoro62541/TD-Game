@@ -10,6 +10,7 @@ namespace TDGame.UnitEntity
     public class Unit : MonoBehaviour, IUnit
     {
         [SerializeField] private UnitData _data;
+        [SerializeField] private UnitScriptableData _scriptableData;
         private HealthComponent _healthComponent;
         public UnitData Data => _data;
         public Transform Transform => transform;
@@ -17,11 +18,14 @@ namespace TDGame.UnitEntity
 
         private void Awake()
         {
-            if (_data is null)
+            if (_scriptableData is null)
             {
                 throw new NullReferenceException(nameof(_data));
             }
+                _data = new(_scriptableData);
+            
             _healthComponent = GetComponent<HealthComponent>();
+            
         }
     }
 }

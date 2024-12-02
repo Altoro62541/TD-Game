@@ -2,6 +2,8 @@ using Cinemachine;
 using UnityEngine;
 using TDGame.GO;
 using TDGame.Inputs.Cam;
+using System;
+
 namespace TDGame.Cam
 {
     [RequireComponent(typeof(Camera))]
@@ -20,25 +22,7 @@ namespace TDGame.Cam
 
     private void Start()
     {
-
-        if (Application.isEditor){
-            _cameraInput = new MouseCameraInput();
-            Debug.Log("Editor platform detected, using MouseCameraInput.");
-        }
-
-        else if (Application.platform == RuntimePlatform.WindowsPlayer) {
-            _cameraInput = new MouseCameraInput();
-            Debug.Log("Windows platform detected.");
-        }
-
-        else if (Application.platform == RuntimePlatform.Android) {
-            _cameraInput = new TouchCameraInput();
-            Debug.Log("Android platform detected.");    
-        }
-
-        else
-            Debug.LogError("Unsupported platform for camera input.");
-
+        InputChoise();
 
         _followTarget = _virtualCamera.Follow;
         if (_followTarget == null)
@@ -51,25 +35,24 @@ namespace TDGame.Cam
         var boxCollider = _boundaryCollider?.GetComponent<BoxCollider2D>();
         if (boxCollider == null)
         {
-            Debug.LogError("Collider wasn't detected.");
             enabled = false;
-            return;
+            throw new Exception("Collider wasn't detected.");
         }
 
         Bounds bounds = boxCollider.bounds;
         _minBounds = bounds.min;
         _maxBounds = bounds.max;
 
-        Camera cam = Camera.main;
-        if (cam == null)
+        Camera camera = Camera.main;
+        if (camera == null)
         {
             Debug.LogError("Main Camera not found.");
             enabled = false;
             return;
         }
 
-        _halfHeight = cam.orthographicSize;
-        _halfWidth = _halfHeight * cam.aspect;
+        _halfHeight = camera.orthographicSize;
+        _halfWidth = _halfHeight * camera.aspect;
     }
 
     private void Update()
@@ -85,6 +68,39 @@ namespace TDGame.Cam
 
         _followTarget.position = newPosition;
     }
+    private ICameraInput InputChoise()
+    {
+    ICameraInput cameraInput = null;
+
+    switch (Application.platform)
+    {
+        case RuntimePlatform.WindowsPlayer:
+            Debug.Log("Windows platform detected.");
+            cameraInput = new MouseCameraInput();
+            break;
+            
+        case RuntimePlatform.Android:
+            Debug.Log("Android platform detected.");
+            cameraInput = new TouchCameraInput();
+            break;
+
+        case RuntimePlatform.WebGLPlayer:
+            Debug.Log("Editor platform detected, using MouseCameraInput.");
+            cameraInput = new MouseCameraInput();
+            break;
+
+        case RuntimePlatform.WindowsEditor:
+            Debug.Log("Editor platform detected, using MouseCameraInput.");
+            cameraInput = new MouseCameraInput();
+            break;
+
+        default:
+            throw new Exception("Unsupported platform for camera input.");
+    }
+
+    return _cameraInput = cameraInput;
+    }
 }
 }
+
 

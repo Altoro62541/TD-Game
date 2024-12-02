@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: _data
       value: 
       objectReference: {fileID: 11400000, guid: fb30d352cdd69e14e941cbf960e2e7c0, type: 2}
+    - target: {fileID: 4064128279132287537, guid: 812ee0ce111d04f4da2a7185c1ab525b, type: 3}
+      propertyPath: _scriptableData
+      value: 
+      objectReference: {fileID: 11400000, guid: fb30d352cdd69e14e941cbf960e2e7c0, type: 2}
     - target: {fileID: 9207310455991971417, guid: 812ee0ce111d04f4da2a7185c1ab525b, type: 3}
       propertyPath: m_Name
       value: UnitRobot Variant
