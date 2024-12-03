@@ -1,18 +1,19 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 namespace TDGame.UI
 {
     public class WaveUI : MonoBehaviour
     {
-    private TextMeshProUGUI _waveText;
-    private void Start()
-    {
-        _waveText = gameObject.GetComponent<TextMeshProUGUI>();
-    }
+    [SerializeField] private TextMeshProUGUI _waveText;
     public void UpdateWave(int currentWave, int totalWaves)
     {
-        _waveText.text = $"Wave {currentWave}/{totalWaves}";
+        if (_waveText == null)
+        {
+            Debug.LogError("WaveText is not assigned!");
+            return;
+        }
+
+        _waveText.text = $"Wave: {currentWave} / {totalWaves}";
     }
     }
 }
