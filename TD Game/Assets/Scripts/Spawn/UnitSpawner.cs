@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using TDGame.Factories.Units;
 using TDGame.GO;
 using TDGame.SO.Spawn;
+using TDGame.UI;
 using UnityEngine;
 using Zenject;
 namespace TDGame.Spawn
@@ -11,6 +12,7 @@ namespace TDGame.Spawn
     public class UnitSpawner : MonoBehaviour
     {
     [Inject] private IUnitFactoryGO _factory;
+    [Inject] private WaveUI _waveUI;
     [SerializeField] private UnitSpawnPoint _spawnPoint;
     [SerializeField] private UnitSpawnConfig _spawnConfig;
 
@@ -55,6 +57,7 @@ namespace TDGame.Spawn
         if (Position != Vector3.zero)
         {
             _factory.Create(unit, Position, Quaternion.identity, null);
+            _waveUI.UpdateWave(wave + 1, _spawnConfig.TotalWaves);
             SpawnedUnits++;
         }
 
