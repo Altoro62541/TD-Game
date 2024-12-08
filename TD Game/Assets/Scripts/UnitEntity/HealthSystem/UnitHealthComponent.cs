@@ -2,9 +2,9 @@ using System;
 using UniRx;
 using UnityEngine;
 
-namespace TDGame.HealthSystem
+namespace TDGame.UnitEntity.HealthSystem
 {
-    public class HealthComponent : MonoBehaviour, IHealthComponent
+    public class UnitHealthComponent : MonoBehaviour, IUnitHealthComponent
     {
         [SerializeField] private FloatReactiveProperty _health = new();
         [SerializeField] private FloatReactiveProperty _maxHealth = new();
@@ -24,7 +24,7 @@ namespace TDGame.HealthSystem
 
             else
             {
-                throw new ArgumentException("damage must between 0");
+                throw new ArgumentException("damage must be above than 0");
             }
 
             _health.Value = Mathf.Clamp(_health.Value - damage, 0, _maxHealth.Value);
@@ -51,4 +51,3 @@ namespace TDGame.HealthSystem
         }
     }
 }
-

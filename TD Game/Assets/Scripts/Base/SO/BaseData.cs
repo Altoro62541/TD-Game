@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class BaseData : MonoBehaviour
+using Sirenix.OdinInspector;
+namespace TDGame.BaseSpace.SO
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(menuName = "Base/New Data")]
+    public class BaseData : SerializedScriptableObject
     {
-        
-    }
+        [SerializeField] private float _health;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float Health => _health;
     }
 }
+

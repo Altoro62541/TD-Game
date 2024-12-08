@@ -1,20 +1,20 @@
 using System;
 using TDGame.Handlers;
-using TDGame.HealthSystem;
 using TDGame.SO.Units;
+using TDGame.UnitEntity.HealthSystem;
 using UnityEngine;
 namespace TDGame.UnitEntity
 {
-    [RequireComponent(typeof(HealthComponent))]
+    [RequireComponent(typeof(UnitHealthComponent))]
     [RequireComponent(typeof(EnabledComponentsHandler))]
     public class Unit : MonoBehaviour, IUnit
     {
         [SerializeField] private UnitData _data;
         [SerializeField] private UnitScriptableData _scriptableData;
-        private HealthComponent _healthComponent;
+        private UnitHealthComponent _healthComponent;
         public UnitData Data => _data;
         public Transform Transform => transform;
-        public IHealthComponent HealthComponent => _healthComponent;
+        public IUnitHealthComponent HealthComponent => _healthComponent;
 
         private void Awake()
         {
@@ -24,7 +24,7 @@ namespace TDGame.UnitEntity
             }
                 _data = new(_scriptableData);
             
-            _healthComponent = GetComponent<HealthComponent>();
+            _healthComponent = GetComponent<UnitHealthComponent>();
             
         }
     }
