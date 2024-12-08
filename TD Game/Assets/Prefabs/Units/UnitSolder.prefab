@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3639464494139432342}
   - component: {fileID: 2820496969105766805}
   - component: {fileID: 7166493784978858358}
+  - component: {fileID: -6773293661951695819}
+  - component: {fileID: 4069154168495909474}
   m_Layer: 0
   m_Name: UnitSolder
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -12.48, y: -6.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -202,3 +204,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04ed9e3cc605d6438a939a4380b5da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &-6773293661951695819
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440210367438340606}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.64000016
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 30
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.2800003
+  m_BaseOffset: 0.64000016
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4069154168495909474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440210367438340606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b0c15f4e0fb7c4d89b5e51149d10bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 5678805093009510446, guid: 9e0110cc3ea4ff64088d86b038fb3c84, type: 3}
