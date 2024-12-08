@@ -1,8 +1,7 @@
 using System;
 using UniRx;
 using UnityEngine;
-
-namespace TDGame.HealthSystem
+namespace TDGame.BaseSpace.HealthSystem
 {
     public class HealthComponent : MonoBehaviour, IHealthComponent
     {
@@ -24,7 +23,7 @@ namespace TDGame.HealthSystem
 
             else
             {
-                throw new ArgumentException("damage must between 0");
+                throw new ArgumentException("damage must be above than 0");
             }
 
             _health.Value = Mathf.Clamp(_health.Value - damage, 0, _maxHealth.Value);

@@ -9,6 +9,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1965834259005196863, guid: ec114b2ecd2a7c94da7b51d9226d5316, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965834259005196863, guid: ec114b2ecd2a7c94da7b51d9226d5316, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965834259005196863, guid: ec114b2ecd2a7c94da7b51d9226d5316, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.48
       objectReference: {fileID: 0}
@@ -68,6 +76,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8304277041871903861, guid: ec114b2ecd2a7c94da7b51d9226d5316, type: 3}
+      propertyPath: _data
+      value: 
+      objectReference: {fileID: 11400000, guid: 606a06a1734bf3d47bddb75f54d9a86b, type: 2}
     - target: {fileID: 8440210367438340606, guid: ec114b2ecd2a7c94da7b51d9226d5316, type: 3}
       propertyPath: m_Name
       value: UnitZombie Variant

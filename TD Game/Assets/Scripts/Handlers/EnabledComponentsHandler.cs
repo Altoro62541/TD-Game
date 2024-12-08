@@ -1,4 +1,5 @@
-using TDGame.HealthSystem;
+
+using TDGame.UnitEntity.HealthSystem;
 using UnityEngine;
 
 namespace TDGame.Handlers
@@ -6,11 +7,11 @@ namespace TDGame.Handlers
     public class EnabledComponentsHandler : MonoBehaviour
     {
         private IEnabledComponents[] _enabledComponents;
-        private IHealthComponent _healthComponent;
+        private IUnitHealthComponent _healthComponent;
 
         private void Awake()
         {
-            _healthComponent = GetComponent<HealthComponent>();
+            _healthComponent = GetComponent<UnitHealthComponent>();
             _enabledComponents = GetComponents<IEnabledComponents>();
         }
 

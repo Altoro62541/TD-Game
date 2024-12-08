@@ -1,9 +1,9 @@
 using System;
 using UniRx;
 
-namespace TDGame.HealthSystem
+namespace TDGame.UnitEntity.HealthSystem
 {
-    public interface IHealthComponent
+    public interface IUnitHealthComponent
     {
         event Action OnDead;
         event Action<object> OnHit;
@@ -13,5 +13,6 @@ namespace TDGame.HealthSystem
         public void Damage (float damage, object damager = null);
 
     }
+
 }
 
