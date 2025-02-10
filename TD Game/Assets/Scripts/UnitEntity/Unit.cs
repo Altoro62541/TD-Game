@@ -12,9 +12,11 @@ namespace TDGame.UnitEntity
         [SerializeField] private UnitData _data;
         [SerializeField] private UnitScriptableData _scriptableData;
         private UnitHealthComponent _healthComponent;
+        private Transform _position;
         public UnitData Data => _data;
         public Transform Transform => transform;
         public IUnitHealthComponent HealthComponent => _healthComponent;
+        public Transform Position => _position;
 
         private void Awake()
         {
