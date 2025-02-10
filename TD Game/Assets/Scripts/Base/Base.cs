@@ -6,7 +6,7 @@ using UnityEngine;
 namespace TDGame.BaseSpace
 {
     [RequireComponent(typeof(HealthComponent))]
-    [RequireComponent(typeof(EnabledComponentsHandler))]
+    [RequireComponent(typeof(BaseEnabledComponentsHandler))]
 
     public class Base : MonoBehaviour, IBase
     {

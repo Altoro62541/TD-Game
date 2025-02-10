@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2339069760100019213}
   - component: {fileID: 3982199846183187122}
   - component: {fileID: 584371884105558447}
-  - component: {fileID: 512932816679268859}
+  - component: {fileID: 8106514646929533816}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -162,7 +162,7 @@ MonoBehaviour:
     value: 0
   _maxHealth:
     value: 0
---- !u!114 &512932816679268859
+--- !u!114 &8106514646929533816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1372672032341858473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04ed9e3cc605d6438a939a4380b5da9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dc36cbbcc320204f9706ff12f5e772d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

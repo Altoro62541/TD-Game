@@ -12,7 +12,16 @@ namespace TDGame.Handlers
         private void Awake()
         {
             _healthComponent = GetComponent<UnitHealthComponent>();
-            _enabledComponents = GetComponents<IEnabledComponents>();
+    if (_healthComponent == null)
+    {
+        Debug.LogError("UnitHealthComponent не найден на объекте: " + gameObject.name);
+    }
+
+    _enabledComponents = GetComponents<IEnabledComponents>();
+    if (_enabledComponents.Length == 0)
+    {
+        Debug.LogWarning("Не найдено компонентов, реализующих IEnabledComponents на объекте: " + gameObject.name);
+    }
         }
 
         private void OnDead()

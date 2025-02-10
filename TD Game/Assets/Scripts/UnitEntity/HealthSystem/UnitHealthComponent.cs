@@ -1,53 +1,80 @@
 using System;
+using TDGame.SO.Units;
 using UniRx;
 using UnityEngine;
 
 namespace TDGame.UnitEntity.HealthSystem
 {
+
     public class UnitHealthComponent : MonoBehaviour, IUnitHealthComponent
     {
-        [SerializeField] private FloatReactiveProperty _health = new();
-        [SerializeField] private FloatReactiveProperty _maxHealth = new();
-        public event Action<object> OnHit;
-        public event Action OnDead;
+    [SerializeField] private UnitScriptableData _data;
+    [SerializeField] private FloatReactiveProperty _health = new FloatReactiveProperty();
+    [SerializeField] private FloatReactiveProperty _maxHealth = new FloatReactiveProperty();
 
-        public IReadOnlyReactiveProperty<float> Health => _health;
+    public event Action<object> OnHit;
+    public event Action OnDead;
 
-        public IReadOnlyReactiveProperty<float> MaxHealth => _maxHealth;
+    public IReadOnlyReactiveProperty<float> Health => _health;
+    public IReadOnlyReactiveProperty<float> MaxHealth => _maxHealth;
 
-        public void Damage(float damage, object damager = null)
+    private void Awake()
+    {
+        if (_data == null)
         {
-            if (damage > 0)
-            {
-                OnHit?.Invoke(damager);
-            }
-
-            else
-            {
-                throw new ArgumentException("damage must be above than 0");
-            }
-
-            _health.Value = Mathf.Clamp(_health.Value - damage, 0, _maxHealth.Value);
-
-            if (_health.Value <= 0)
-            {
-                OnDead?.Invoke();
-            }
+            Debug.LogError("UnitScriptableData is not assigned!");
+            return;
         }
 
-        public void SetHealth (float health)
+        _maxHealth.Value = _data.Health;
+        _health.Value = _data.Health;
+
+        OnDead += HandleUnitDeath;
+
+        Debug.Log($"Initialized Health: {_health.Value}, MaxHealth: {_maxHealth.Value}");
+    }
+
+    public void Damage(float damage, object damager = null)
+    {
+        if (damage <= 0f)
         {
-            _health.Value = Mathf.Clamp(health, 0, _maxHealth.Value);
+            throw new ArgumentException("Damage must be greater than 0");
         }
 
-        public void SetMaxHealth(float health)
-        {
-            _maxHealth.Value = Mathf.Clamp(health, 0, float.MaxValue);
-        }
+        Debug.Log($"Damage called! Damage: {damage}, Current Health: {_health.Value}");
+        OnHit?.Invoke(damager);
 
-        private void OnValidate()
+        _health.Value = Mathf.Clamp(_health.Value - damage, 0, _maxHealth.Value);
+        Debug.Log($"New Health: {_health.Value}");
+
+        if (_health.Value <= 0f)
         {
-            _health.Value = Mathf.Clamp(_health.Value, 0, _maxHealth.Value);
+            Debug.Log("Unit is dead!");
+            OnDead?.Invoke();
         }
+    }
+
+    public void SetHealth(float health)
+    {
+        _health.Value = Mathf.Clamp(health, 0, _maxHealth.Value);
+    }
+
+    public void SetMaxHealth(float maxHealthValue)
+    {
+        _maxHealth.Value = Mathf.Clamp(maxHealthValue, 1, float.MaxValue);
+        _health.Value = Mathf.Clamp(_health.Value, 0, _maxHealth.Value);
+    }
+
+    private void OnValidate()
+    {
+        _maxHealth.Value = Mathf.Max(_maxHealth.Value, 1);
+        _health.Value = Mathf.Clamp(_health.Value, 0, _maxHealth.Value);
+    }
+
+    private void HandleUnitDeath()
+    {
+        Destroy(gameObject);
+        OnDead -= HandleUnitDeath;
+    }
     }
 }
