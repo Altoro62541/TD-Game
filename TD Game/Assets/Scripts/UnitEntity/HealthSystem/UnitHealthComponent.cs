@@ -1,4 +1,5 @@
 using System;
+using TDGame.Money;
 using TDGame.SO.Units;
 using UniRx;
 using UnityEngine;
@@ -74,6 +75,7 @@ namespace TDGame.UnitEntity.HealthSystem
     private void HandleUnitDeath()
     {
         Destroy(gameObject);
+        Currency.Instance.AddCurrency(_data.RewardAmount);
         OnDead -= HandleUnitDeath;
     }
     }

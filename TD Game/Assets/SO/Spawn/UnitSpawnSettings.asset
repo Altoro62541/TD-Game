@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _elements:
   - _prefab: {fileID: 3639464494139432342, guid: ec114b2ecd2a7c94da7b51d9226d5316, type: 3}
-    _unitsCount: 4
+    _unitsCount: 25
   - _prefab: {fileID: 3489053316762856075, guid: 0760bdd5cefe77d4fa91580b50da3442, type: 3}
-    _unitsCount: 3
+    _unitsCount: 15
   - _prefab: {fileID: 4064128279132287537, guid: 812ee0ce111d04f4da2a7185c1ab525b, type: 3}
-    _unitsCount: 2
+    _unitsCount: 7
   - _prefab: {fileID: 1638811045865080952, guid: 97c45d3701a0b1942be2a877f3d927a9, type: 3}
-    _unitsCount: 1
+    _unitsCount: 3
   TotalWaves: 5
-  BaseUnitsPerWave: 10
+  BaseUnitsPerWave: 50
   WaveInterval: 5
-  SpawnInterval: 2
+  SpawnInterval: 0.7

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f77bd02c439424d909d645b62f9b4b, type: 3}
   m_Name: Robot
   m_EditorClassIdentifier: 
-  _health: 50
+  _health: 20
   _damage: 3
-  _speedMove: 1
+  _speedMove: 1.5
+  _rewardAmount: 25

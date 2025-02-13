@@ -1,3 +1,4 @@
+using TDGame.SO.Units;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,6 +6,7 @@ namespace TDGame.UnitEntity.Movement
 {
     public class UnitMovement : MonoBehaviour, IEnabledComponents
     {
+    [SerializeField] private UnitScriptableData _data;
     private NavMeshAgent _agent;
     [SerializeField] private Transform _target;
     private Transform _cachedTransform;
@@ -26,6 +28,7 @@ namespace TDGame.UnitEntity.Movement
             enabled = false;
             return;
         }
+        _agent.speed = _data.SpeedMove;
 
         _agent.updateUpAxis = false;
         _agent.updateRotation = false;

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: RocketProjectile
   m_EditorClassIdentifier: 
   _projectileSpeed: 4
-  _projectileDamage: 5
+  _projectileDamage: 4
+  _areaRadius: 2

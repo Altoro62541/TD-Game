@@ -7,9 +7,11 @@ namespace TDGame.GO.SO
     {
         [SerializeField] private float _projectileSpeed;
         [SerializeField] private float _projectileDamage;
+        [SerializeField] private float _areaRadius; 
 
         public float ProjectileSpeed => _projectileSpeed;
         public float ProjectileDamage => _projectileDamage;
+        public float AreaRadius => _areaRadius;
     }
 }
 
