@@ -1,8 +1,10 @@
 using System;
 using TDGame.Money;
 using TDGame.SO.Units;
+using TDGame.UI;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace TDGame.UnitEntity.HealthSystem
 {
@@ -18,6 +20,14 @@ namespace TDGame.UnitEntity.HealthSystem
 
     public IReadOnlyReactiveProperty<float> Health => _health;
     public IReadOnlyReactiveProperty<float> MaxHealth => _maxHealth;
+
+    private Currency _currency;
+
+    [Inject]
+    public void Construct(Currency currency)
+    {
+        _currency = currency;
+    }
 
     private void Awake()
     {
@@ -75,7 +85,7 @@ namespace TDGame.UnitEntity.HealthSystem
     private void HandleUnitDeath()
     {
         Destroy(gameObject);
-        Currency.Instance.AddCurrency(_data.RewardAmount);
+        _currency.AddCurrency(_data.RewardAmount);
         OnDead -= HandleUnitDeath;
     }
     }

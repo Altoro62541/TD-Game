@@ -1,32 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 namespace TDGame.Money
 {
     public class Currency : MonoBehaviour
     {
-        public static Currency Instance { get; private set; }
-
+        public event Action<int> OnCurrencyChanged;
         [SerializeField] private int _currentMoney;
+        public int CurrentMoney => _currentMoney;
 
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-            }
-        }
-
-        public int AddCurrency(int amount)
+        public void AddCurrency(int amount)
         {
             _currentMoney += amount;
-            return _currentMoney;
+            OnCurrencyChanged?.Invoke(_currentMoney);
         }
     }   
 }
