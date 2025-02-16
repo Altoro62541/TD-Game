@@ -13,7 +13,7 @@ namespace TDGame.SO.Spawn
         public int TotalWaves = 5; 
         public int BaseUnitsPerWave = 3;
         public int WaveInterval = 5;
-        public int SpawnInterval = 2;
+        public float SpawnInterval = 2;
 
         public int GetUnitsPerWave(int wave)
         {

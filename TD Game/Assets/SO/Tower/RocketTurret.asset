@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RocketTurret
   m_EditorClassIdentifier: 
   _damage: 5
-  _fireRate: 0.7
+  _fireRate: 0.5
   _fireRadius: 6
   _rotationSpeed: 160
   _projectilePrefab: {fileID: 1537547791332665117, guid: e1cb744c299e1e644ac37cbb77f2ffba, type: 3}

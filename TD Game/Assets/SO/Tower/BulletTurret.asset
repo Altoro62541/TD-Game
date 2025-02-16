@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulletTurret
   m_EditorClassIdentifier: 
   _damage: 1
-  _fireRate: 2
+  _fireRate: 3
   _fireRadius: 4
   _rotationSpeed: 200
   _projectilePrefab: {fileID: 1035210763761421526, guid: 53a3a9515b671994284b1959565c0921, type: 3}

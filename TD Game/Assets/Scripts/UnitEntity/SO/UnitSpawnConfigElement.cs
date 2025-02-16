@@ -7,8 +7,10 @@ namespace TDGame.UnitEntity.SO
     {
         [SerializeField] private Unit _prefab;
         [SerializeField] private int _unitsCount;
+        
         public Unit Prefab => _prefab;
         public int UnitsCount => _unitsCount;
+        
     }
 }
 
