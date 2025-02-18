@@ -1,9 +1,9 @@
 using System;
 using Cysharp.Threading.Tasks;
 using TDGame.GO;
-using TDGame.Towers.Attack;
 using UniRx;
 using UnityEngine;
+using Zenject;
 namespace TDGame.Towers
 {
     public class TowerPlacement : MonoBehaviour
@@ -16,8 +16,14 @@ namespace TDGame.Towers
     private Camera _mainCamera;
     private bool _isBuilding;
 
-    private readonly Subject<string> _towerBuilt = new Subject<string>();
-    public IObservable<string> OnTowerBuilt => _towerBuilt;
+    // Получаем контейнер через внедрение
+    private DiContainer _container;
+
+    [Inject]
+    public void Construct(DiContainer container)
+    {
+        _container = container;
+    }
 
     private void Awake()
     {
@@ -66,13 +72,17 @@ namespace TDGame.Towers
         place.SetOccupied(true);
         Debug.Log($"Строительство башни: {towerName}...");
 
-        await UniTask.Delay(TimeSpan.FromSeconds(_buildDelay));
+        await UniTask.Delay(System.TimeSpan.FromSeconds(_buildDelay));
 
-        GameObject tower = Instantiate(towerPrefab, place.transform.position, Quaternion.identity);
-        tower.transform.SetParent(place.transform);
+        // ВАЖНО: теперь создаём башню через Zenject
+        GameObject tower = _container.InstantiatePrefab(
+            towerPrefab,
+            place.transform.position,
+            Quaternion.identity,
+            place.transform
+        );
 
         Debug.Log($"Башня {towerName} успешно построена на позиции {place.transform.position}");
-        _towerBuilt.OnNext(towerName);
     }
 }
 }

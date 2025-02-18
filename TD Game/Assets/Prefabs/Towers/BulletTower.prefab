@@ -42,6 +42,9 @@ GameObject:
   - component: {fileID: 1178428129201878985}
   - component: {fileID: 498198664778845976}
   - component: {fileID: -8998360870555652197}
+  - component: {fileID: 1585930243728751065}
+  - component: {fileID: -8549403836107882822}
+  - component: {fileID: -6993306064064308407}
   m_Layer: 0
   m_Name: BulletTower
   m_TagString: Untagged
@@ -135,3 +138,74 @@ MonoBehaviour:
     m_Bits: 64
   _firePos: {fileID: 2982558319922555270}
   _turretRotationPoint: {fileID: 1178428129201878985}
+--- !u!114 &1585930243728751065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840482844116304677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d9cca559e37294180eb7ced9b1d6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerData: {fileID: 11400000, guid: a1c0bb20b1eccc748bf1d86e3425e91c, type: 2}
+--- !u!114 &-8549403836107882822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840482844116304677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb010b86233b519439f7837de92d5e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgradeData: {fileID: 11400000, guid: c60fb1108e461f448bdcbd97ba3f144e, type: 2}
+--- !u!61 &-6993306064064308407
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840482844116304677}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0035798252, y: -0.053696617}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7064567, y: 0.77805257}
+  m_EdgeRadius: 0

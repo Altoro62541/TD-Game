@@ -5561,12 +5561,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583241450}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.55987024, y: 1.1900461, z: -10.103634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1510532639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &657210004
 GameObject:
@@ -12918,6 +12918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1463923748}
   - component: {fileID: 1463923749}
+  - component: {fileID: 1463923750}
   m_Layer: 0
   m_Name: TowersSurfaces
   m_TagString: Untagged
@@ -12963,6 +12964,18 @@ MonoBehaviour:
   _spawnPlaceLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &1463923750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463923746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbf1b56e80414a4c890e19c8545cf9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1510532638
 GameObject:
   m_ObjectHideFlags: 0
@@ -12992,7 +13005,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 583241452}
   m_Father: {fileID: 2028556296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1510532640
@@ -14578,4 +14592,3 @@ SceneRoots:
   - {fileID: 1522886532}
   - {fileID: 1952145999}
   - {fileID: 1463923748}
-  - {fileID: 583241452}
