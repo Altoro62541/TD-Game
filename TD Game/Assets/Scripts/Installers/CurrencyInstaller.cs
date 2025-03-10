@@ -7,7 +7,7 @@ namespace TDGame.Installers
     {
         public override void InstallBindings()
         {
-            Container.Bind<Currency>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<Currency>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
         }
     }
 }
