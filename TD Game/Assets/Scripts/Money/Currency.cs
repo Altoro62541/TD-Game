@@ -6,7 +6,7 @@ namespace TDGame.Money
     public class Currency : MonoBehaviour
     {
         public event Action<int> OnCurrencyChanged;
-        [SerializeField] private int _currentMoney;
+        [SerializeField] private int _currentMoney = 20;
         public int CurrentMoney => _currentMoney;
 
         public void AddCurrency(int amount)

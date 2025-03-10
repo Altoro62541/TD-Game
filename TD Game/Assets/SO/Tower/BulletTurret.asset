@@ -17,3 +17,4 @@ MonoBehaviour:
   _fireRadius: 4
   _rotationSpeed: 200
   _projectilePrefab: {fileID: 1035210763761421526, guid: 53a3a9515b671994284b1959565c0921, type: 3}
+  _price: 5
